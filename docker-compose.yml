@@ -19,7 +19,7 @@ services:
   # Postgres
   postgres:
     container_name: postgres_db
-    image: postgres
+    build: ./postgres
     ports:
       - "5432:5432"
     environment:
