@@ -13,12 +13,7 @@ const image = require("./controllers/image");
 
 const db = knex({
   client: "pg",
-  connection: {
-    host: "127.0.0.1",
-    user: "",
-    password: "",
-    database: "smart-brain",
-  },
+  connection: process.env.POSTGRES_URI,
 });
 
 const app = express();
@@ -44,5 +39,5 @@ app.post("/imageurl", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("app is running on port 3000");
+  console.log("app is running on port 3000 + 3000");
 });
