@@ -32,7 +32,7 @@ const handleSignin = (db, bcrypt, req, res) => {
 const getAuthTokenId = (req, res) => {
   const { authorization } = req.headers;
   return redisClient.get(authorization, (err, reply) => {
-    if (err || !reploy) {
+    if (err || !reply) {
       return res.status(401).json('Unauthorized');
     }
     return res.json({ id: reply });
